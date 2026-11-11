@@ -1,0 +1,47 @@
+package {
+    default_team: "trendy_team_fwk_telephony",
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+android_test {
+    name: "CarrierConfigTests",
+    libs: [
+        "android.test.runner.stubs.system",
+        "android.test.base.stubs.system",
+    ],
+    static_libs: [
+        "junit",
+        "carrier_config_flags_lib",
+        "flag-junit",
+    ],
+    srcs: ["src/**/*.java"],
+    platform_apis: true,
+    test_suites: ["device-tests"],
+    certificate: "platform",
+    instrumentation_for: "CarrierConfig",
+    test_config: "AndroidTest.xml",
+}
+
+android_test {
+    name: "CarrierConfigKotlinTests",
+    libs: [
+        "android.test.runner.stubs.system",
+        "android.test.base.stubs.system",
+    ],
+    static_libs: [
+        "junit",
+        "carrier_config_flags_lib",
+        "flag-junit",
+        "mockito-target-minus-junit4",
+        "mockito-kotlin-nodeps",
+        "androidx.test.ext.junit",
+    ],
+    srcs: [
+        "src/**/*.kt",
+    ],
+    platform_apis: true,
+    test_suites: ["device-tests"],
+    certificate: "platform",
+    instrumentation_for: "CarrierConfig",
+    test_config: "AndroidTest_kotlin.xml",
+}

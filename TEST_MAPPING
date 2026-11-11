@@ -1,0 +1,12 @@
+{
+  "presubmit": [
+    {
+      "name": "CarrierConfigTests"
+    }
+  ],
+  "postsubmit": [
+    {
+      "name": "CarrierConfigKotlinTests"
+    }
+  ]
+}
